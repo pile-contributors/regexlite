@@ -9,7 +9,7 @@ include(pile_support)
 
 # initialize this module
 macro    (regexliteInit
-          ref_cnt_use_mode)
+          regexlite_use_mode)
 
     # default name
     if (NOT REGEXLITE_INIT_NAME)
@@ -20,7 +20,13 @@ macro    (regexliteInit
     set(REGEXLITE_HEADERS
         "regexlite.h")
     set(REGEXLITE_SOURCES
-        "regexlite.cc")
+        "regexlite.cc"
+        "drvsqlite.cc"
+        "qsqlcachedresult.cpp"
+        "sqlite/sqlite3.c")
+
+    set(REGEXLITE_QT_MODS
+        sql)
 
     pileSetSources(
         "${REGEXLITE_INIT_NAME}"
@@ -31,9 +37,9 @@ macro    (regexliteInit
         "${REGEXLITE_INIT_NAME}"
         "0;0;1;d"
         "ON"
-        "${ref_cnt_use_mode}"
+        "${regexlite_use_mode}"
         ""
-        "category1"
-        "tag1;tag2")
+        "database"
+        "qt;GUI;sqlite")
 
 endmacro ()
