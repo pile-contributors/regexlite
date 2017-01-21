@@ -1,5 +1,5 @@
 /**
- * @file tempile-config.h
+ * @file regexlite-config.h
  * @brief The content of this file is dynamically generated at compile time by CMake.
  * @author Nicu Tofan <nicu.tofan@gmail.com>
  * @copyright Copyright 2014 piles contributors. All rights reserved.
@@ -7,8 +7,8 @@
  * [MIT License](http://opensource.org/licenses/mit-license.html)
  */
 
-#ifndef GUARD_TEMPILE_CONFIG_H_INCLUDE
-#define GUARD_TEMPILE_CONFIG_H_INCLUDE
+#ifndef GUARD_REGEXLITE_CONFIG_H_INCLUDE
+#define GUARD_REGEXLITE_CONFIG_H_INCLUDE
 
 /**
  * @def Qt5Core_FOUND
@@ -42,90 +42,90 @@
 #endif
 
 //! the name of this project
-#define TEMPILE_PROJECT_NAME       "@TEMPILE_NAME@"
+#define REGEXLITE_PROJECT_NAME       "@REGEXLITE_NAME@"
 
 //! major version (ABI not preserved between these)
-#define TEMPILE_MAJOR_VERSION      (@TEMPILE_MAJOR_VERSION@)
+#define REGEXLITE_MAJOR_VERSION      (@REGEXLITE_MAJOR_VERSION@)
 
 //! minor version; ABI is preserved
-#define TEMPILE_MINOR_VERSION      (@TEMPILE_MINOR_VERSION@)
+#define REGEXLITE_MINOR_VERSION      (@REGEXLITE_MINOR_VERSION@)
 
 //! bug fixes
-#define TEMPILE_PATCH_VERSION      (@TEMPILE_PATCH_VERSION@)
+#define REGEXLITE_PATCH_VERSION      (@REGEXLITE_PATCH_VERSION@)
 
 //! the version as a 32-bit integer
-#define TEMPILE_VERSION            (\
-    TEMPILE_MAJOR_VERSION * 0x100000 + \
-    TEMPILE_MINOR_VERSION * 0x1000 + \
-    TEMPILE_PATCH_VERSION * 0x1)
+#define REGEXLITE_VERSION            (\
+    REGEXLITE_MAJOR_VERSION * 0x100000 + \
+    REGEXLITE_MINOR_VERSION * 0x1000 + \
+    REGEXLITE_PATCH_VERSION * 0x1)
 
 //! version as a string
-#define TEMPILE_VERSION_STRING     "@TEMPILE_VERSION_STRING@"
+#define REGEXLITE_VERSION_STRING     "@REGEXLITE_VERSION_STRING@"
 
 //! when it was build (UTC)
-#define TEMPILE_BUILD_TIME         "@TEMPILE_BUILD_TIME@"
+#define REGEXLITE_BUILD_TIME         "@REGEXLITE_BUILD_TIME@"
 
 
 /**
- * @def TEMPILE_DEBUG
+ * @def REGEXLITE_DEBUG
  * @brief Indicates whether the debug features should be enabled or disabled
  */
-#ifndef TEMPILE_DEBUG
-#  ifdef TEMPILE_FORCE_DEBUG
-#    define TEMPILE_DEBUG 1
+#ifndef REGEXLITE_DEBUG
+#  ifdef REGEXLITE_FORCE_DEBUG
+#    define REGEXLITE_DEBUG 1
 #  else
-#cmakedefine TEMPILE_DEBUG
+#cmakedefine REGEXLITE_DEBUG
 #  endif
 #endif
 
 
 /**
- * @def TEMPILE_STATIC
+ * @def REGEXLITE_STATIC
  * @brief If defined it indicates a static library being build
  */
-#cmakedefine TEMPILE_STATIC
+#cmakedefine REGEXLITE_STATIC
 
 /**
- * @def TEMPILE_PILE
+ * @def REGEXLITE_PILE
  * @brief If defined it indicates a pile usage
  */
-#cmakedefine TEMPILE_PILE
+#cmakedefine REGEXLITE_PILE
 
 
 /**
- * @def TEMPILE_SHARED
+ * @def REGEXLITE_SHARED
  * @brief If defined it indicates a shared library
  *
- * TEMPILE_SHARED is defined when building the project
+ * REGEXLITE_SHARED is defined when building the project
  * and undefined when a file from another project
  * includes the file.
  */
 
 
 /**
- * @def TEMPILE_EXPORT
+ * @def REGEXLITE_EXPORT
  * @brief makes the sources compatible with all kinds of deployments.
  */
-#if defined(TEMPILE_STATIC)
-#   define      TEMPILE_EXPORT
-#elif defined(TEMPILE_PILE)
-#   define      TEMPILE_EXPORT      @TEMPILE_EXPORT@
-#elif defined(TEMPILE_SHARED)
+#if defined(REGEXLITE_STATIC)
+#   define      REGEXLITE_EXPORT
+#elif defined(REGEXLITE_PILE)
+#   define      REGEXLITE_EXPORT      @REGEXLITE_EXPORT@
+#elif defined(REGEXLITE_SHARED)
 #   ifdef PILES_HAVE_QT
-#       define  TEMPILE_EXPORT      Q_DECL_EXPORT
+#       define  REGEXLITE_EXPORT      Q_DECL_EXPORT
 #   elif defined(_MSC_VER)
-#       define  TEMPILE_EXPORT      __declspec(dllexport)
+#       define  REGEXLITE_EXPORT      __declspec(dllexport)
 #   else
-#       define  TEMPILE_EXPORT      __attribute__((visibility("default")))
+#       define  REGEXLITE_EXPORT      __attribute__((visibility("default")))
 #   endif
 #else
 #   ifdef PILES_HAVE_QT
-#       define  TEMPILE_EXPORT      Q_DECL_IMPORT
+#       define  REGEXLITE_EXPORT      Q_DECL_IMPORT
 #   elif defined(_MSC_VER)
-#       define  TEMPILE_EXPORT      __declspec(dllimport)
+#       define  REGEXLITE_EXPORT      __declspec(dllimport)
 #   else
-#       define  TEMPILE_EXPORT      __attribute__((visibility("default")))
+#       define  REGEXLITE_EXPORT      __attribute__((visibility("default")))
 #   endif
 #endif
 
-#endif // GUARD_TEMPILE_CONFIG_H_INCLUDE
+#endif // GUARD_REGEXLITE_CONFIG_H_INCLUDE

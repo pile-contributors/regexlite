@@ -1,27 +1,27 @@
 /**
- * @file tempile.h
- * @brief Declarations for TemPile class
+ * @file regexlite.h
+ * @brief Declarations for regexlite class
  * @author Nicu Tofan <nicu.tofan@gmail.com>
  * @copyright Copyright 2014 piles contributors. All rights reserved.
  * This file is released under the
  * [MIT License](http://opensource.org/licenses/mit-license.html)
  */
 
-#ifndef GUARD_TEMPILE_H_INCLUDE
-#define GUARD_TEMPILE_H_INCLUDE
+#ifndef GUARD_REGEXLITE_H_INCLUDE
+#define GUARD_REGEXLITE_H_INCLUDE
 
-#include <tempile/tempile-config.h>
+#include <regexlite/regexlite-config.h>
 
 //! brief description
-class TEMPILE_EXPORT TemPile {
+class REGEXLITE_EXPORT RegexLite {
 
 public:
 
     //! Default constructor.
-    TemPile ();
+    RegexLite ();
 
     //! Destructor.
-    virtual ~TemPile();
+    virtual ~RegexLite();
 
 protected:
 
@@ -29,4 +29,4 @@ private:
 
 };
 
-#endif // GUARD_TEMPILE_H_INCLUDE
+#endif // GUARD_REGEXLITE_H_INCLUDE

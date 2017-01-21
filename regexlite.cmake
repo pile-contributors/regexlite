@@ -1,6 +1,6 @@
 
 # enable/disable cmake debug messages related to this pile
-set (TEMPILE_DEBUG_MSG ON)
+set (REGEXLITE_DEBUG_MSG ON)
 
 # make sure support code is present; no harm
 # in including it twice; the user, however, should have used
@@ -8,27 +8,27 @@ set (TEMPILE_DEBUG_MSG ON)
 include(pile_support)
 
 # initialize this module
-macro    (tempileInit
+macro    (regexliteInit
           ref_cnt_use_mode)
 
     # default name
-    if (NOT TEMPILE_INIT_NAME)
-        set(TEMPILE_INIT_NAME "TemPile")
+    if (NOT REGEXLITE_INIT_NAME)
+        set(REGEXLITE_INIT_NAME "regexlite")
     endif ()
 
     # compose the list of headers and sources
-    set(TEMPILE_HEADERS
-        "tempile.h")
-    set(TEMPILE_SOURCES
-        "tempile.cc")
+    set(REGEXLITE_HEADERS
+        "regexlite.h")
+    set(REGEXLITE_SOURCES
+        "regexlite.cc")
 
     pileSetSources(
-        "${TEMPILE_INIT_NAME}"
-        "${TEMPILE_HEADERS}"
-        "${TEMPILE_SOURCES}")
+        "${REGEXLITE_INIT_NAME}"
+        "${REGEXLITE_HEADERS}"
+        "${REGEXLITE_SOURCES}")
 
     pileSetCommon(
-        "${TEMPILE_INIT_NAME}"
+        "${REGEXLITE_INIT_NAME}"
         "0;0;1;d"
         "ON"
         "${ref_cnt_use_mode}"
