@@ -16,7 +16,7 @@ macro    (regexliteInit
         set(REGEXLITE_INIT_NAME "regexlite")
     endif ()
 
-    find_package(ICU 57 REQUIRED
+    find_package(ICU 58 REQUIRED
         COMPONENTS uc i18n)
 
     set(REGEXLITE_LIBRARIES
