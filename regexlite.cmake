@@ -19,15 +19,15 @@ macro    (regexliteInit
     find_package(ICU 57 REQUIRED
         COMPONENTS uc i18n)
 
-    set(REGEXLITE_DEPENDENCIES
+    set(REGEXLITE_LIBRARIES
         ${ICU_UC_LIBRARIES}
         ${ICU_I18N_LIBRARIES})
 
     set(REGEXLITE_INCLUDES
         ${ICU_INCLUDE_DIRS})
-    message(STATUS "ICU_ROOT = ${ICU_ROOT}")
-    message(STATUS "ICU_ROOT = ${ICU_UC_LIBRARIES}")
-    message(STATUS "ICU_INCLUDE_DIRS = ${ICU_INCLUDE_DIRS}")
+#    message(STATUS "ICU_ROOT = ${ICU_ROOT}")
+#    message(STATUS "ICU_ROOT = ${ICU_UC_LIBRARIES}")
+#    message(STATUS "ICU_INCLUDE_DIRS = ${ICU_INCLUDE_DIRS}")
 
     # compose the list of headers and sources
     set(REGEXLITE_HEADERS
