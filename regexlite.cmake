@@ -1,6 +1,6 @@
 
 # enable/disable cmake debug messages related to this pile
-set (REGEXLITE_DEBUG_MSG ON)
+set (REGEXLITE_DEBUG_MSG OFF)
 
 # make sure support code is present; no harm
 # in including it twice; the user, however, should have used
@@ -15,6 +15,19 @@ macro    (regexliteInit
     if (NOT REGEXLITE_INIT_NAME)
         set(REGEXLITE_INIT_NAME "regexlite")
     endif ()
+
+    find_package(ICU 57 REQUIRED
+        COMPONENTS uc i18n)
+
+    set(REGEXLITE_DEPENDENCIES
+        ${ICU_UC_LIBRARIES}
+        ${ICU_I18N_LIBRARIES})
+
+    set(REGEXLITE_INCLUDES
+        ${ICU_INCLUDE_DIRS})
+    message(STATUS "ICU_ROOT = ${ICU_ROOT}")
+    message(STATUS "ICU_ROOT = ${ICU_UC_LIBRARIES}")
+    message(STATUS "ICU_INCLUDE_DIRS = ${ICU_INCLUDE_DIRS}")
 
     # compose the list of headers and sources
     set(REGEXLITE_HEADERS

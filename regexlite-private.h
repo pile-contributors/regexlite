@@ -30,8 +30,10 @@
 #    define REGEXLITE_TRACE_EXIT
 #endif
 
-
+#ifndef BLACK_HOLE
 static inline void black_hole (...)
 {}
+#define BLACK_HOLE black_hole
+#endif
 
 #endif // GUARD_REGEXLITE_PRIVATE_H_INCLUDE
