@@ -27,7 +27,8 @@
  *
  */
 
-static QLatin1String drv_name ("QSQLITE");
+//static QLatin1String drv_name ("QSQLITE");
+static QLatin1String drv_name ("REGEXLITE");
 
 /* ------------------------------------------------------------------------- */
 RegexLite::RegexLite() :
