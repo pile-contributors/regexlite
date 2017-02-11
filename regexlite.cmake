@@ -53,14 +53,15 @@ macro    (regexliteInit
     endif ()
 
     find_package(ICU 58 REQUIRED
-        COMPONENTS uc i18n)
+        COMPONENTS uc i18n dt)
 
     set(REGEXLITE_LIBRARIES
         ${ICU_UC_LIBRARIES}
-        ${ICU_I18N_LIBRARIES})
+        ${ICU_I18N_LIBRARIES}
+        ${ICU_DT_LIBRARIES})
 
     if (WIN32)
-        regexliteFindIcuDll("${ICU_UC_LIBRARIES};${ICU_I18N_LIBRARIES}" REGEXLITE_DLLS)
+        regexliteFindIcuDll("${ICU_UC_LIBRARIES};${ICU_I18N_LIBRARIES};${ICU_DT_LIBRARIES}" REGEXLITE_DLLS)
         # message(STATUS "REGEXLITE_DLLS = ${REGEXLITE_DLLS}")
     endif()
 
