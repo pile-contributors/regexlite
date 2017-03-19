@@ -75,6 +75,7 @@ macro    (regexliteInit
     set(REGEXLITE_HEADERS
         "regexlite.h")
     set(REGEXLITE_SOURCES
+        "regexlite-entry-points.cc"
         "regexlite.cc"
         "drvsqlite.cc"
         "qsqlcachedresult.cpp"

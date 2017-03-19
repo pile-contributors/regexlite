@@ -21,6 +21,10 @@ class REGEXLITE_EXPORT RegexLite : public QSqlDriverPlugin {
 
 public:
 
+    typedef void(*sqliteEntryPoint)(void);
+
+public:
+
     //! Default constructor.
     RegexLite ();
 
@@ -34,7 +38,19 @@ public:
 
     //! Might be used if you don't want to use Qt plugin mechanism.
     static void
-    installDriver();
+    installDriver ();
+
+    //! The entry point for the sqlite3.
+    static sqliteEntryPoint
+    getEntryPoint ();
+
+    //! Autoregister this extension with each new database
+    //! (when not using the plugin).
+    //! @warning this is n untested, paralel implementation; currently the
+    //! code in sqlite.c contains the function to use.
+    static bool
+    autoregister ();
+
 };
 
 #endif // GUARD_REGEXLITE_H_INCLUDE
