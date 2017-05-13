@@ -45,6 +45,8 @@
 #include <qstringlist.h>
 #include <qvector.h>
 #include <qdebug.h>
+#include <QFileInfo>
+#include <QDir>
 
 #if defined Q_OS_WIN
 # include <qt_windows.h>
@@ -701,8 +703,23 @@ bool QSQLiteEnhancedDriver::open(const QString & db, const QString &, const QStr
             d->access = 0;
         }
 
-        setLastError(qMakeError(d->access, tr("Error opening database"),
-                     QSqlError::ConnectionError));
+        bool b_error_set = false;
+        QFileInfo fi (db);
+        if (!fi.exists ()) {
+            if (fi.dir ().exists ()) {
+                setLastError(qMakeError(
+                                 d->access,
+                                 tr ("Directory %1 does not exist")
+                                 .arg (fi.dir ().absolutePath()),
+                             QSqlError::ConnectionError));
+                b_error_set = true;
+            }
+        }
+
+        if (!b_error_set) {
+            setLastError(qMakeError(d->access, tr("Error opening database"),
+                         QSqlError::ConnectionError));
+        }
         setOpenError(true);
         return false;
     }
