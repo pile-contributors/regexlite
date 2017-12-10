@@ -79,6 +79,7 @@ static void epoint_regexp (
         // we make sure to always set the same pattern
         // matching syntax.
         arg1.setPatternSyntax (QRegExp::RegExp);
+        arg1.setCaseSensitivity (Qt::CaseInsensitive);
 
         // Perform the actual matching and return the result.
         // Note that Qt's QRegExp returns -1 if the regex
